@@ -16,12 +16,12 @@ export class AdminService {
 
     constructor(private http: HttpClient) {}
 
-    public Login(email: String, password: String): Observable<String> {
-        return this.http.get<String>(`${this.apiServerUrl}/admin/login/${email}/${password}`);
+    public Login(email: string, password: string): Observable<string> {
+        return this.http.get<string>(`${this.apiServerUrl}/admin/login/${email}/${password}`);
     }
 
-    public addCompany(company: Company): Observable<String> {
-        return this.http.post<String>(`${this.apiServerUrl}/admin/company/add`, company);
+    public addCompany(company: Company): Observable<string> {
+        return this.http.post<string>(`${this.apiServerUrl}/admin/company/add`, company);
     }
 
     public updateCompany(company: Company): Observable<String> {
@@ -36,7 +36,7 @@ export class AdminService {
         return this.http.get<Company[]>(`${this.apiServerUrl}/admin/company/getAll`);
     }
 
-    public getOneCompany(companyId : Number): Observable<Company>{
+    public getOneCompany(companyId : number): Observable<Company>{
         return this.http.get<Company>(`${this.apiServerUrl}/admin/company/get/${companyId}`);
     }
 
@@ -48,7 +48,7 @@ export class AdminService {
         return this.http.put<void>(`${this.apiServerUrl}/admin/customer/update`, customer);
     }
 
-    public deleteCustomer(customerId: Number): Observable<void> {
+    public deleteCustomer(customerId: number): Observable<void> {
         return this.http.delete<void>(`${this.apiServerUrl}/admin/customer/delete/${customerId}`);
     }
 

@@ -4,6 +4,7 @@ import { AdminService } from '../Services/admin.services';
 import { NgForm } from '@angular/forms';
 import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Coupon } from '../Entities/coupon';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'company-form',
@@ -12,29 +13,21 @@ import { Coupon } from '../Entities/coupon';
 })
 export class CompanyFormComponent implements OnInit {
 
-  company: Company;
-
   constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
   }
+
   apply(companyForm: NgForm): void
   {
-    //to checkss
-    console.log("before");
-    console.log(companyForm.value);
-    
-    const formValue = companyForm.value;
-    const name= formValue.name;
-    const email= formValue.email;
-    const password = formValue.value;
-    console.log("after");
-    //need to fix 
-     this.company.name =formValue.name;
-     this.company.email = formValue.email;
-     this.company.password = formValue.value;
+    this.adminService.addCompany(companyForm.value).subscribe(
+      (Response:string)=>{},
+      (error:HttpErrorResponse)=>{console.log(error.message)}
+    );
 
-    this.adminService.addCompany(this.company);
+
+
+
   }
 
 }

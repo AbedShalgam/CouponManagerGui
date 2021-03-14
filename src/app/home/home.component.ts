@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { ThisReceiver } from '@angular/compiler';
 import { Component, NgModule, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -24,6 +25,7 @@ export class HomeComponent implements OnInit {
       
     })
   }
+
   login(loginForm: NgForm): void
   {
     console.log(loginForm.value);
@@ -33,16 +35,27 @@ export class HomeComponent implements OnInit {
     const loginType = Number(formValue.loginType);
      this.loginWithTheLoginType(email, password, loginType);
   }
+
   loginWithTheLoginType(email:string , password:string , loginType:number){
     switch(loginType)
     {
       case 0:
         console.log('here')
        
-        this.adminService.Login(email,password);
-         console.log()
+        this.adminService.Login(email,password).subscribe(
+          (x:string)=>{
+            
+            console.log('1');
+            x = JSON.stringify(x);
+            
+          
+          },
+          (error:HttpErrorResponse)=>{console.log(error.message)}
+        );
+
+        this.router.navigate(['/admin']);
         //too add validation if email exsist before navigate;
-        this.router.navigate(['/admin'])
+        
         break;    
       case 1:
         this.companyService.Login(email,password);
