@@ -11,8 +11,8 @@ import { Coupon } from '../Entities/coupon';
   styleUrls: ['./company-form.component.css']
 })
 export class CompanyFormComponent implements OnInit {
-  copon: Coupon;
-  company: Company = {id:0,name:'test',email:'e@e.com',password:'ps',coupons:{copon}}
+
+  company: Company;
 
   constructor(private adminService:AdminService) { }
 

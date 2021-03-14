@@ -1,0 +1,19 @@
+
+<form #companyForm="ngForm" (ngSubmit)= "apply(companyForm)" action="/action_page.php">
+  <div class="container">
+    <h1>Company</h1>
+    <p>Please fill in Company details</p>
+    <hr>
+    <label for="name"><b>Name</b></label>
+    <input ngModel type="text" placeholder="Enter Compny Name" name="name" id="name" required>
+    <label for="email"><b>Email</b></label>
+    <input ngModel type="text" placeholder="Enter Email" name="email" id="email" required>
+    <label for="password"><b>Password</b></label>
+    <input ngModel type="password" placeholder="Enter Password" name="password" id="password" required>
+    <hr>
+
+    <button ngmodel type="submit" class="registerbtn">Apply</button>
+  </div>
+</form>
+
+

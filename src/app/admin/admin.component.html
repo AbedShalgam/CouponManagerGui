@@ -1,0 +1,18 @@
+
+<div>
+    <button (click)="showcust()">{{CustomerOrCompany}}</button>
+    <button (click)="addCompany()">Add Company</button>
+    <button (click)="addCustomer()">Add Customer</button>
+</div><br>
+
+<div *ngIf="isCustomer">
+    <div *ngFor="let customer of customers">
+        <customer [customer]="customer"></customer>
+    </div>
+</div>
+<div *ngIf="!isCustomer">
+    <div *ngFor="let company of companies">
+        <company [company]="company"></company>
+    </div>
+</div>
+
