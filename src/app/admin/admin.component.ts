@@ -39,10 +39,11 @@ export class AdminComponent implements OnInit {
       this.CustomerOrCompany = "Show Customers";
     }
   }
+  
   addCompany()
   {
      this.router.navigate(['/company-form']);
-     // take added comany details()
+     //take added comany details()
      //this.adminService.addCompany(this.company);
 
   }
