@@ -37,7 +37,7 @@ const routes: Routes = [
     CouponComponent,
     CompanyUserComponent,
     CustomerUserComponent,
-    CompanyFormComponent
+    CompanyFormComponent,
   ],
   imports: [
     BrowserModule,
