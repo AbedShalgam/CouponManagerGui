@@ -29,7 +29,7 @@ export class CustomerService {
     return this.http.get<Coupon[]>(`${this.apiServerUrl}/customer/coupons/category/${category}`);
   }
 
-  public getCustomerCouponsByPrice(price: Number): Observable<Coupon[]> {
+  public getCustomerCouponsByPrice(price: number): Observable<Coupon[]> {
     return this.http.get<Coupon[]>(`${this.apiServerUrl}/customer/coupons/price/${price}`);
   }
  
@@ -37,7 +37,7 @@ export class CustomerService {
     return this.http.get<Customer>(`${this.apiServerUrl}/customer/details`);
   }
 
-  public getOneCoupon(companyId: Number, title: String): Observable<Customer> {
+  public getOneCoupon(companyId: number, title: String): Observable<Customer> {
     return this.http.get<Customer>(`${this.apiServerUrl}/customer/coupon/${companyId}/${title}`);
    }
   

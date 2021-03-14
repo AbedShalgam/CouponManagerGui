@@ -29,7 +29,7 @@ export class CompanyService {
         return this.http.put<String>(`${this.apiServerUrl}/company/coupon/update`, coupon);
     }
 
-    public deleteCoupon(couponId: Number): Observable<String> {
+    public deleteCoupon(couponId: number): Observable<String> {
         return this.http.delete<String>(`${this.apiServerUrl}/company/coupon/delete/${couponId}`);
     }
 
@@ -41,7 +41,7 @@ export class CompanyService {
         return this.http.get<Coupon[]>(`${this.apiServerUrl}/company/coupons/category/${category}`);
     }
 
-    public getCompanyCouponsByPrice(price: Number): Observable<Coupon[]> {
+    public getCompanyCouponsByPrice(price: number): Observable<Coupon[]> {
         return this.http.get<Coupon[]>(`${this.apiServerUrl}/company/coupons/category/${price}`);
     }
 
