@@ -28,7 +28,7 @@ export class AdminService {
         return this.http.put<String>(`${this.apiServerUrl}/admin/company/update`, company);
     }
 
-    public deleteCompany(companyId: number): Observable<void> {
+    public deleteCompany(companyId: Number): Observable<void> {
         return this.http.delete<void>(`${this.apiServerUrl}/admin/company/delete/${companyId}`);
     }
 
@@ -36,7 +36,7 @@ export class AdminService {
         return this.http.get<Company[]>(`${this.apiServerUrl}/admin/company/getAll`);
     }
 
-    public getOneCompany(companyId : Company): Observable<Company>{
+    public getOneCompany(companyId : Number): Observable<Company>{
         return this.http.get<Company>(`${this.apiServerUrl}/admin/company/get/${companyId}`);
     }
 
@@ -48,7 +48,7 @@ export class AdminService {
         return this.http.put<void>(`${this.apiServerUrl}/admin/customer/update`, customer);
     }
 
-    public deleteCustomer(customerId: number): Observable<void> {
+    public deleteCustomer(customerId: Number): Observable<void> {
         return this.http.delete<void>(`${this.apiServerUrl}/admin/customer/delete/${customerId}`);
     }
 

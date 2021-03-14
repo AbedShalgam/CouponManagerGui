@@ -1,14 +1,14 @@
 import { Category } from './category';
 
 export interface Coupon {
-    id : number;
-	companyId: number;
+    id : Number;
+	companyId: Number;
 	category: Category;
 	title: string;
 	description: string;
 	startDate: Date;
 	endDate: Date;
-	amount: number;
-	price: number;
+	amount: Number;
+	price: Number;
 	image: string;
 }

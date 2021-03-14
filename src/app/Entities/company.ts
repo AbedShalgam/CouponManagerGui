@@ -1,7 +1,7 @@
 import { Coupon } from "./coupon";
 
 export interface Company {
-    id: number;
+    id: Number;
     name: string;
     email: string;
     password: string;
