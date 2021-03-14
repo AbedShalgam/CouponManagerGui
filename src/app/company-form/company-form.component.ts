@@ -20,7 +20,7 @@ export class CompanyFormComponent implements OnInit {
   }
   apply(companyForm: NgForm): void
   {
-    //to check
+    //to checkss
     console.log("before");
     console.log(companyForm.value);
     
