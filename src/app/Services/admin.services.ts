@@ -16,16 +16,16 @@ export class AdminService {
 
     constructor(private http: HttpClient) {}
 
-    public Login(email: string, password: string): Observable<string> {
-        return this.http.get<string>(`${this.apiServerUrl}/admin/login/${email}/${password}`);
+    public Login(email: string, password: string): Observable<any> {
+        return this.http.get<string>(`${this.apiServerUrl}/admin/login/${email}/${password}`, { responseType: 'text' as 'json' });
     }
 
     public addCompany(company: Company): Observable<string> {
-        return this.http.post<string>(`${this.apiServerUrl}/admin/company/add`, company);
+        return this.http.post<string>(`${this.apiServerUrl}/admin/company/add`, company,{ responseType: 'text' as 'json' });
     }
 
-    public updateCompany(company: Company): Observable<String> {
-        return this.http.put<String>(`${this.apiServerUrl}/admin/company/update`, company);
+    public updateCompany(company: Company): Observable<string> {
+        return this.http.put<string>(`${this.apiServerUrl}/admin/company/update`, company,{ responseType: 'text' as 'json' });
     }
 
     public deleteCompany(companyId: Number): Observable<void> {
@@ -40,8 +40,8 @@ export class AdminService {
         return this.http.get<Company>(`${this.apiServerUrl}/admin/company/get/${companyId}`);
     }
 
-    public addCustomer(customer: Customer): Observable<String> {
-        return this.http.post<String>(`${this.apiServerUrl}/admin/customer/add`, customer);
+    public addCustomer(customer: Customer): Observable<string> {
+        return this.http.post<string>(`${this.apiServerUrl}/admin/customer/add`, customer,{ responseType: 'text' as 'json' });
     }
 
     public updateCustomer(customer: Customer): Observable<void> {

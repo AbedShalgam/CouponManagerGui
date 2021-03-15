@@ -40,20 +40,15 @@ export class HomeComponent implements OnInit {
     switch(loginType)
     {
       case 0:
-        console.log('here')
-       
-        this.adminService.Login(email,password).subscribe(
-          (x:string)=>{
-            
-            console.log('1');
-            x = JSON.stringify(x);
-            
-          
-          },
-          (error:HttpErrorResponse)=>{console.log(error.message)}
-        );
+       this.adminService.Login(email, password).subscribe(res => {
+         if (res === "login succeded")  
+            this.router.navigate(['/admin']);
+         
+       }, err => {
+         alert('Wrong Credential');
+         console.log(err);
+       });
 
-        this.router.navigate(['/admin']);
         //too add validation if email exsist before navigate;
         
         break;    
